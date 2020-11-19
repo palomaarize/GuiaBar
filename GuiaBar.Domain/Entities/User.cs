@@ -1,22 +1,23 @@
-  namespace GuiaBar.Domain.Entities 
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace GuiaBar.Domain.Entities 
+{
+  [Table("user")]
+  public class User
   {
-    public class User : Entity
-    {
-        public User(string name, string contact)
-        {
-            Name = name;
-            Contact = contact;
-        }
+    [Key]
+    [Column("id")]
+    public ulong Id { get; set; }
 
-        public string Name {get; set; }
-        public string Contact { get; set; }
+    [Column("user_name")]
+    public string UserName { get; set; }
 
+    [Column("password")]
+    public string Password { get; set; }
 
-    
-    public void UpdateContact(string contact)
-    {
-        Contact = contact;
-    }
-    }
+    [Column("email")]
+    public string Email { get; set; }
 
   }
+}

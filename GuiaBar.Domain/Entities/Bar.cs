@@ -2,7 +2,7 @@ using System;
 
 namespace GuiaBar.Domain.Entities 
 {
-    public class Bar : Entity
+    public class Bar
     {
         public Bar(string name, string user, DateTime date, string contact)
         {
@@ -23,10 +23,10 @@ namespace GuiaBar.Domain.Entities
         public string User { get; set; }
 
     
-    public void UpdateContact(string contact)
-    {
+        public void UpdateContact(string contact)
+        {
         Contact = contact;
-    }
+        }
     
     }
 

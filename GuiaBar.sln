@@ -5,11 +5,9 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiaBar.Domain", "GuiaBar.Domain\GuiaBar.Domain.csproj", "{0CE95E02-734C-4AAA-8DE4-14F1DDB0321A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiaBar.Domain.API", "GuiaBar.Domain.API\GuiaBar.Domain.API.csproj", "{4F0948E3-7F44-4C3B-BCDA-94A82842E2DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiaBar.API", "GuiaBar.API\GuiaBar.API.csproj", "{4F0948E3-7F44-4C3B-BCDA-94A82842E2DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiaBar.Domain.Test", "GuiaBar.Domain.Test\GuiaBar.Domain.Test.csproj", "{3741B0CB-48DC-4342-93B2-AB5DE65218A0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiaBar.Domain.Infra", "GuiaBar.Domain.Infra\GuiaBar.Domain.Infra.csproj", "{8486C2D9-F14C-4BE3-BF87-8050B02E1781}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuiaBar.Data", "GuiaBar.Data\GuiaBar.Data.csproj", "{8486C2D9-F14C-4BE3-BF87-8050B02E1781}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
