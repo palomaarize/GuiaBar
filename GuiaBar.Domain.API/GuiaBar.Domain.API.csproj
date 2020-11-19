@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\GuiaBar.Domain\GuiaBar.Domain.csproj" />
+    <ProjectReference Include="..\GuiaBar.Domain.Infra\GuiaBar.Domain.Infra.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>

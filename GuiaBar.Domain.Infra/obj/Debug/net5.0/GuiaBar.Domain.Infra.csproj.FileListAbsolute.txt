@@ -1,0 +1,12 @@
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Domain.Infra/bin/Debug/net5.0/GuiaBar.Domain.Infra.deps.json
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Domain.Infra/bin/Debug/net5.0/GuiaBar.Domain.Infra.dll
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Domain.Infra/bin/Debug/net5.0/ref/GuiaBar.Domain.Infra.dll
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Domain.Infra/bin/Debug/net5.0/GuiaBar.Domain.Infra.pdb
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Domain.Infra/obj/Debug/net5.0/GuiaBar.Domain.Infra.csprojAssemblyReference.cache
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Domain.Infra/obj/Debug/net5.0/GuiaBar.Domain.Infra.GeneratedMSBuildEditorConfig.editorconfig
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Domain.Infra/obj/Debug/net5.0/GuiaBar.Domain.Infra.AssemblyInfoInputs.cache
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Domain.Infra/obj/Debug/net5.0/GuiaBar.Domain.Infra.AssemblyInfo.cs
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Domain.Infra/obj/Debug/net5.0/GuiaBar.Domain.Infra.csproj.CoreCompileInputs.cache
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Domain.Infra/obj/Debug/net5.0/GuiaBar.Domain.Infra.dll
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Domain.Infra/obj/Debug/net5.0/ref/GuiaBar.Domain.Infra.dll
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Domain.Infra/obj/Debug/net5.0/GuiaBar.Domain.Infra.pdb

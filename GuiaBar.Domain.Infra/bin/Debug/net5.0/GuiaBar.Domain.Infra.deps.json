@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "GuiaBar.Domain.Infra/1.0.0": {
+        "runtime": {
+          "GuiaBar.Domain.Infra.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GuiaBar.Domain.Infra/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
