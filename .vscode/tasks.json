@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/GuiaBar.Domain.API/GuiaBar.Domain.API.csproj",
+                "${workspaceFolder}/GuiaBar.API/GuiaBar.API.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/GuiaBar.Domain.API/GuiaBar.Domain.API.csproj",
+                "${workspaceFolder}/GuiaBar.API/GuiaBar.API.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -32,7 +32,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/GuiaBar.Domain.API/GuiaBar.Domain.API.csproj",
+                "${workspaceFolder}/GuiaBar.API/GuiaBar.API.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],

@@ -1,0 +1,15 @@
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/bin/Debug/net5.0/GuiaBar.Data.deps.json
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/bin/Debug/net5.0/GuiaBar.Data.dll
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/bin/Debug/net5.0/ref/GuiaBar.Data.dll
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/bin/Debug/net5.0/GuiaBar.Data.pdb
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/bin/Debug/net5.0/GuiaBar.Domain.dll
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/bin/Debug/net5.0/GuiaBar.Domain.pdb
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/obj/Debug/net5.0/GuiaBar.Data.csprojAssemblyReference.cache
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/obj/Debug/net5.0/GuiaBar.Data.GeneratedMSBuildEditorConfig.editorconfig
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/obj/Debug/net5.0/GuiaBar.Data.AssemblyInfoInputs.cache
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/obj/Debug/net5.0/GuiaBar.Data.AssemblyInfo.cs
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/obj/Debug/net5.0/GuiaBar.Data.csproj.CoreCompileInputs.cache
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/obj/Debug/net5.0/GuiaBar.Data.csproj.CopyComplete
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/obj/Debug/net5.0/GuiaBar.Data.dll
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/obj/Debug/net5.0/ref/GuiaBar.Data.dll
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Data/obj/Debug/net5.0/GuiaBar.Data.pdb

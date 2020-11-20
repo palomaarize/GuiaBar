@@ -1,25 +1,24 @@
-
+using GuiaBar.API.Models.Request;
+using GuiaBar.Domain.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GuiaBar.API.Controller
 {
-
     [ApiController]
-    [Route("api/userController")]
+    [Route("api/user")]
     public class UserController : ControllerBase
     {
-        public UserController()
+        private readonly IUserService service;
+        public UserController(IUserService service) 
         {
-
+            this.service = service;
         }
 
         [HttpPost]
-        public ActionResult Post()
+        public ActionResult Post([FromBody]CreateUserRequest request)
         {
+            service.CreateUser(request.UserName, request.Password, request.Email);
             return Ok();
-        }
-    
-        
+        }   
     }
-
 }
