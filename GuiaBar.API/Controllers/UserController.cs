@@ -1,4 +1,5 @@
 using GuiaBar.API.Models.Request;
+using GuiaBar.Domain.Entities;
 using GuiaBar.Domain.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,5 +21,12 @@ namespace GuiaBar.API.Controller
             service.CreateUser(request.UserName, request.Password, request.Email);
             return Ok();
         }   
+
+        [HttpPost("login")]
+        public ActionResult<Token> Post([FromBody]LoginRequest request)
+        {
+            Token result = service.Login(request.UserName, request.Password);
+            return Ok(result);
+        }  
     }
 }

@@ -1,3 +1,4 @@
+using System.Linq;
 using GuiaBar.Domain.Entities;
 using GuiaBar.Domain.Interface;
 
@@ -23,5 +24,7 @@ namespace GuiaBar.Data.Repository
             dbContext.Set<User>().Add(user);
             dbContext.SaveChanges();
         }
+
+        public User GetUserByUserName(string userName) => dbContext.Users.FirstOrDefault(u => u.UserName == userName);
     }
 }

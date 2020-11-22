@@ -20,7 +20,9 @@
                 "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
             },
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "DATABASE_CONNECTION_STRING": "Host=postgres.evilsummit.com.br;Port=5432;Username=usr011;Password=h4tQ7csNwV;Database=db011;",
+                "TOKEN_KEY": "2eaefcbef6f04d9f2a45fba7f1fd47f5f8cd4feab65d1bb1670a8dd5b7a1c05c30fd14663be31c6ef04d4336bcd49cbfc042706fe5b71a18b0b426cf6f2229db"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"

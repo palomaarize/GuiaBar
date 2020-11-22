@@ -49,6 +49,14 @@
               "target": "Package",
               "version": "[5.0.0-rc1, )"
             },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -171,6 +179,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.8.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

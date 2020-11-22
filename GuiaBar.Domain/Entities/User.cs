@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GuiaBar.Domain.Entities 
 {
-  [Table("user")]
+  [Table("application_user")]
   public class User
   {
     [Key]
     [Column("id")]
-    public ulong Id { get; set; }
+    public long Id { get; set; }
 
     [Column("user_name")]
     public string UserName { get; set; }

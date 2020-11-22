@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 using GuiaBar.Data;
 using GuiaBar.Data.Repository;
 using GuiaBar.Domain.Interface;
@@ -9,11 +6,13 @@ using GuiaBar.Domain.Services;
 using GuiaBar.Domain.Services.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using GuiaBar.Domain.Config;
 
 namespace GuiaBar.Domain.API
 {
@@ -32,8 +31,26 @@ namespace GuiaBar.Domain.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<GuiaBarContext>(options => options.UseNpgsql("Host=postgres.evilsummit.com.br;Port=5432;Username=usr011;Password=h4tQ7csNwV;Database=db011;").UseLazyLoadingProxies().UseLowerCaseNamingConvention());
-            
+            services.AddDbContext<GuiaBarContext>(options => options.UseNpgsql(Settings.DATABASE_CONNECTION_STRING).UseLazyLoadingProxies().UseLowerCaseNamingConvention());
+
+            byte[] key = Encoding.ASCII.GetBytes(Settings.TOKEN_KEY);
+            services.AddAuthentication(x =>
+                {
+                    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
 
             #region Dependency Injection
             //Repository

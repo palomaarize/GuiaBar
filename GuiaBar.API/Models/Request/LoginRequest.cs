@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 namespace GuiaBar.API.Models.Request
 {
     [DataContract]
-    public class CreateUserRequest
+    public class LoginRequest
     {
         [JsonPropertyName("username")]
         public string UserName { get; set; }
@@ -12,9 +12,6 @@ namespace GuiaBar.API.Models.Request
 
         [JsonPropertyName("password")]
         public string Password { get; set; }
-        
 
-        [JsonPropertyName("email")]
-        public string Email { get; set; }
     }
 }

@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "F0GSVs43OCAR3QCDcoA8SnSA9oYy7/A7BN++6rckt5CwF9i4zk7slfi5Pq7J8GK8YgI+YgJ2lls3chRFawAzJA==",
+  "dgSpecHash": "1hIS2KTJ2Bhvx3iyzsmXrCDvibp5tCpfhzSiZ9fTCwfmMss7p6zK23+Bn4ZMtXEFaa32VakkTlYCda83cgAe7Q==",
   "success": true,
   "projectFilePath": "/home/paloma/Documentos/projects/GuiaBar/GuiaBar.Domain/GuiaBar.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/paloma/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/home/paloma/.nuget/packages/microsoft.identitymodel.jsonwebtokens/6.8.0/microsoft.identitymodel.jsonwebtokens.6.8.0.nupkg.sha512",
+    "/home/paloma/.nuget/packages/microsoft.identitymodel.logging/6.8.0/microsoft.identitymodel.logging.6.8.0.nupkg.sha512",
+    "/home/paloma/.nuget/packages/microsoft.identitymodel.tokens/6.8.0/microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
+    "/home/paloma/.nuget/packages/system.identitymodel.tokens.jwt/6.8.0/system.identitymodel.tokens.jwt.6.8.0.nupkg.sha512",
+    "/home/paloma/.nuget/packages/system.security.cryptography.cng/4.5.0/system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

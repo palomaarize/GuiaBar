@@ -1,3 +1,5 @@
+using GuiaBar.Domain.Entities;
+
 namespace GuiaBar.Domain.Interface
 {
     public interface IUserRepository
@@ -5,6 +7,7 @@ namespace GuiaBar.Domain.Interface
 
         
         void CreateUser(string userName, string password, string email);
+        User GetUserByUserName(string userName);
     
     }
 }
