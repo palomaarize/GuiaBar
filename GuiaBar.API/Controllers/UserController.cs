@@ -18,7 +18,7 @@ namespace GuiaBar.API.Controller
         [HttpPost]
         public ActionResult Post([FromBody]CreateUserRequest request)
         {
-            service.CreateUser(request.UserName, request.Password, request.Email);
+            service.CreateUser(request.UserName, request.Password, request.Email, request.Address);
             return Ok();
         }   
 
@@ -27,6 +27,6 @@ namespace GuiaBar.API.Controller
         {
             Token result = service.Login(request.UserName, request.Password);
             return Ok(result);
-        }  
+        } 
     }
 }

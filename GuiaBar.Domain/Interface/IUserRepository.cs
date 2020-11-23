@@ -6,7 +6,7 @@ namespace GuiaBar.Domain.Interface
     {
 
         
-        void CreateUser(string userName, string password, string email);
+        void CreateUser(string userName, string password, string email, string address);
         User GetUserByUserName(string userName);
     
     }

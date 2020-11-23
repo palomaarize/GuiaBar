@@ -19,5 +19,20 @@ namespace GuiaBar.Domain.Entities
     [Column("email")]
     public string Email { get; set; }
 
+    [Column("address")]
+    public string Address { get; set; }
+
+    [Column("is_admin")]
+    public bool IsAdmin { get; set; }
+
+    public string Role()
+    {
+      if(this.IsAdmin)
+      {
+        return Constants.Constants.ROLE_ADMIN;
+      }
+      return Constants.Constants.ROLE_COMMON;
+    }
+
   }
 }

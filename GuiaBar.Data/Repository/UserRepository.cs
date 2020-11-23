@@ -11,14 +11,16 @@ namespace GuiaBar.Data.Repository
         {
             this.dbContext = dbContext;
         }
-        public void CreateUser(string userName, string password, string email)
+        public void CreateUser(string userName, string password, string email, string address)
         {
 
             User user = new User()
             {
                 UserName = userName,
                 Password = password,
-                Email = email
+                Email = email,
+                Address = address,
+                IsAdmin = false,
             };
 
             dbContext.Set<User>().Add(user);

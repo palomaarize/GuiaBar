@@ -16,5 +16,9 @@ namespace GuiaBar.API.Models.Request
 
         [JsonPropertyName("email")]
         public string Email { get; set; }
+        
+
+        [JsonPropertyName("address")]
+        public string Address { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace GuiaBar.Domain.Services
             this.repository = repository;
         }
 
-        public void CreateUser(string userName, string password, string email) => repository.CreateUser(userName, password, email);
+        public void CreateUser(string userName, string password, string email, string address) => repository.CreateUser(userName, password, email, address);
 
         public Token Login(string userName, string password)
         {
@@ -39,8 +39,8 @@ namespace GuiaBar.Domain.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, user.UserName)
-                    //new Claim(ClaimTypes.Role, user.Role.ToString())
+                    new Claim(ClaimTypes.Name, user.UserName),
+                    new Claim(ClaimTypes.Role, user.Role())
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

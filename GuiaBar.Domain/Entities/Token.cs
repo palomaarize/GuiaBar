@@ -4,8 +4,6 @@ namespace GuiaBar.Domain.Entities
 {
     public class Token
     {
-        public string UserId { get; set; }
-
         public bool Authenticated {get; set; }
 
         public  DateTime Created { get; set; }

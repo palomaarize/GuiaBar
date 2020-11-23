@@ -31,7 +31,7 @@ namespace GuiaBar.Domain.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<GuiaBarContext>(options => options.UseNpgsql(Settings.DATABASE_CONNECTION_STRING).UseLazyLoadingProxies().UseLowerCaseNamingConvention());
+            services.AddDbContext<GuiaBarContext>(options => options.UseNpgsql(Settings.DATABASE_CONNECTION_STRING));
 
             byte[] key = Encoding.ASCII.GetBytes(Settings.TOKEN_KEY);
             services.AddAuthentication(x =>
@@ -55,8 +55,10 @@ namespace GuiaBar.Domain.API
             #region Dependency Injection
             //Repository
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPubRepository, PubRepository>();
             //Services
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IPubService, PubService>();            
             #endregion
         }
 
