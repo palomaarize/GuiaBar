@@ -18,13 +18,17 @@ namespace GuiaBar.API.Controllers
             this.service = service;
         }
 
+
         [HttpPost]
         [Authorize(Roles = "admin")]
         public ActionResult Post([FromBody]CreatePubRequest request)
         {
             service.CreatePub(request.Name, request.Description, request.Address, request.Contact);
             return Ok();
-        }   
+        }
+
+       
+     
 
         [HttpPut]
         [Route("{id}")]

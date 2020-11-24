@@ -6,6 +6,5 @@ namespace GuiaBar.Domain.Services.Interface
     {
         void CreateUser(string userName, string password, string email, string address);
         Token Login(string userName, string password);
-
     }
 }

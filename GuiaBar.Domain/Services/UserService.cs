@@ -18,6 +18,7 @@ namespace GuiaBar.Domain.Services
             this.repository = repository;
         }
 
+        
         public void CreateUser(string userName, string password, string email, string address) => repository.CreateUser(userName, password, email, address);
 
         public Token Login(string userName, string password)

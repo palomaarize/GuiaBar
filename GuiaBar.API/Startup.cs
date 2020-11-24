@@ -31,8 +31,8 @@ namespace GuiaBar.Domain.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<GuiaBarContext>(options => options.UseNpgsql(Settings.DATABASE_CONNECTION_STRING));
-            services.AddCors();
             services.AddControllers();
+            services.AddCors();
 
             byte[] key = Encoding.ASCII.GetBytes(Settings.TOKEN_KEY);
             services.AddAuthentication(x =>
@@ -79,7 +79,10 @@ namespace GuiaBar.Domain.API
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
+
 
             app.UseEndpoints(endpoints =>
             {

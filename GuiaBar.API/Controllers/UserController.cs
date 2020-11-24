@@ -28,5 +28,6 @@ namespace GuiaBar.API.Controller
             Token result = service.Login(request.UserName, request.Password);
             return Ok(result);
         } 
+
     }
 }
