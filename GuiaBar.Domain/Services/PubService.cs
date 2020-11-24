@@ -18,7 +18,9 @@ namespace GuiaBar.Domain.Services
             this.repository = repository;
         }
 
+
         public void CreatePub(string name, string description, string address, string contact) => repository.CreatePub(name, description, address, contact);
 
-    }
+        public void PubEvaluation(long id, decimal evaluation) => repository.PubEvaluation(id, evaluation);
+    }  
 }

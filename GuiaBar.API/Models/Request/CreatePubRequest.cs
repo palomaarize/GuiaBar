@@ -6,6 +6,9 @@ namespace GuiaBar.API.Models.Request
     [DataContract]
     public class CreatePubRequest
     {
+    
+    [JsonPropertyName("id")]
+    public long Id { get; set; }
 
     [JsonPropertyName("name")]       
     public string Name { get; set; }

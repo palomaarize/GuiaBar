@@ -6,6 +6,7 @@ namespace GuiaBar.API.Models.Request
     [DataContract]
     public class CreateUserRequest
     {
+        
         [JsonPropertyName("username")]
         public string UserName { get; set; }
 

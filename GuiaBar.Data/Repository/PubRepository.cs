@@ -1,3 +1,4 @@
+using System.Linq;
 using GuiaBar.Domain.Entities;
 using GuiaBar.Domain.Interface;
 
@@ -24,6 +25,19 @@ namespace GuiaBar.Data.Repository
             dbContext.Set<Pub>().Add(pub);
             dbContext.SaveChanges();
         }
+
+        public void PubEvaluation(long id, decimal evaluation)
+        {
+            Pub pubEvaluation = new Pub() {Id = id};
+            dbContext.Pubs.Attach(pubEvaluation); 
+            pubEvaluation.Evaluation = evaluation;
+            dbContext.SaveChanges();
+
+
+        }
+
+        // public Pub GetByName(string name) => dbContext.Pubs.FirstOrDefault(p => p.Name == name);
+
 
     }
 }
