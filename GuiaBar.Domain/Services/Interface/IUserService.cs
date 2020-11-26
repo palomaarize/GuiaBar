@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using GuiaBar.Domain.Entities;
 
 namespace GuiaBar.Domain.Services.Interface
@@ -8,6 +9,7 @@ namespace GuiaBar.Domain.Services.Interface
         Token Login(string userName, string password);
         void CreateEvaluation(long userId, string pubName, decimal evaluation);
         // void GetEvaluationById(long pubId);
-        Root CountDistance(string userAddress, string pubAddress);
+        Root CountDistance(long userId, string pubName);
+         public IEnumerable<Pub> GetAllPubs();
     }
 }

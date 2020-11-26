@@ -10,6 +10,7 @@ namespace GuiaBar.Domain.Interface
         void CreateUser(string userName, string password, string email, string address);
         User GetUserByUserName(string userName);
         void CreateEvaluation(long userId, long pubId, decimal evaluation);
-        // UserPubEvaluation GetEvaluationById(long pubId);
+        User GetUserById(long userId);
+        IEnumerable<Pub> GetAllPubs();
     }
 }

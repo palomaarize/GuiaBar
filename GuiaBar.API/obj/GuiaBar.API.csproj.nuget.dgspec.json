@@ -60,6 +60,10 @@
             "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.5.0, )"
             }
           },
           "imports": [

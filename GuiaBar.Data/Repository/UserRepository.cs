@@ -33,6 +33,7 @@ namespace GuiaBar.Data.Repository
         }
 
         public User GetUserByUserName(string userName) => dbContext.Users.FirstOrDefault(u => u.UserName == userName);
+        public User GetUserById(long userId) => dbContext.Users.FirstOrDefault(u => u.Id == userId);
         public void CreateEvaluation(long userId, long pubId, decimal evaluation)
         {
             
@@ -46,39 +47,14 @@ namespace GuiaBar.Data.Repository
             dbContext.Set<UserPubEvaluation>().Add(pubEvaluation);
             dbContext.SaveChanges();
         }
+
+        public IEnumerable<Pub> GetAllPubs()
+        {   
+            IQueryable<Pub> pubsList =
+            from pubs in dbContext.Pubs
+            select pubs;
+            return pubsList.ToList();
+        }
         
-        
-
-        
-        
-
-
-        // List<UserPubEvaluation> evaluations = dbContext.UserPubEvaluations
-        //  .Include(e => e.Evaluation)
-        //  .Where(e => e.Id == id)
-        //  .ToList();
-
-        //  foreach (var e in evaluations);
-
-
-
-
-        // public UserPubEvaluation MediaEvaluation(long id, decimal evaluation)
-        // {
-        //      List<UserPubEvaluation> posts = dbContext.UserPubEvaluations
-        //      .Include(e => e.Evaluation)
-        //      .Where(e => e.Id == id).ToList();
-
-
-        //  public UserPubEvaluation GetPubById(long id){
-        //     UserPubEvaluation getPubs = dbContext.UserPubEvaluations.Where((e) => e.Id == id);
-        //  }
-
-        //     //  List<UserPubEvaluation> evaluations = new List<UserPubEvaluation>();
-        //     //  evaluations.Add(id, evaluation);
-
-
-        //     throw new System.NotImplementedException();
-        // }
     }
 }

@@ -4,11 +4,11 @@ namespace GuiaBar.API.Models.Request
 {
     public class GetRouteRequest
     {
-        [JsonPropertyName("userAddress")]
-        public string UserAddress { get; set; }
+        [JsonPropertyName("userId")]
+        public long UserId { get; set; }
         
 
-        [JsonPropertyName("pubAddress")]
-        public string PubAddress { get; set; }
+        [JsonPropertyName("pubName")]
+        public string PubName { get; set; }
     }
 }

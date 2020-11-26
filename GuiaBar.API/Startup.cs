@@ -13,6 +13,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using GuiaBar.Domain.Config;
+using Microsoft.OpenApi.Models;
+using System;
 
 namespace GuiaBar.Domain.API
 {
@@ -53,6 +55,25 @@ namespace GuiaBar.Domain.API
                 };
             });
 
+        services.AddSwaggerGen(c =>
+            {
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "GuiaBar.API",
+        Description = "API to help you find good bars",
+        Contact = new OpenApiContact
+        {
+            Name = "Paloma Arize",
+            Email = "paloma.arize@ufba.br",
+            Url = new Uri("https://github.com/palomaarize"),
+        },
+
+    });
+});
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+
             #region Dependency Injection
             //Repository
             services.AddScoped<IUserRepository, UserRepository>();
@@ -79,6 +100,14 @@ namespace GuiaBar.Domain.API
             .AllowAnyOrigin()
             .AllowAnyMethod()
             .AllowAnyHeader());
+
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "GuiaBar API V1");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseRouting();
 

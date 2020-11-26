@@ -77,7 +77,19 @@ namespace GuiaBar.Domain.Services
             pubRepository.UpdateEvaluation((long)pubId, averageEvaluations);
         }
 
-            public Root CountDistance(string userAddress, string pubAddress) => distanceRepository.GetRoute(userAddress, pubAddress);
-             
+            public Root CountDistance(long userId, string pubName)
+            {
+                string pubAddress = pubRepository.GetPubByName(pubName).Address;
+                if(pubAddress == null)
+                {
+                    throw new NullReferenceException("Bar sem endereço cadastrado!");
+                }
+                string userAddress = userRepository.GetUserById(userId).Address;
+
+                return distanceRepository.GetRoute(userAddress, pubAddress);
+            }
+
+                public IEnumerable<Pub> GetAllPubs() => userRepository.GetAllPubs();
+
     }
 }
