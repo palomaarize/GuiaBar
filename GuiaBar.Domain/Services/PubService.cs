@@ -20,8 +20,17 @@ namespace GuiaBar.Domain.Services
             this.repository = repository;
         }
 
+        public IEnumerable<Pub> GetAllPubs() => repository.GetAllPubs();
 
-        public void CreatePub(string name, string description, string address, string contact) => repository.CreatePub(name, description, address, contact);
+        public void CreatePub(string name, string description, string address, string contact)
+        {   
+            IEnumerable<Pub> pubsNames = repository.GetAllPubs().Where(p => p.Name == name).ToList();
+            if(pubsNames != null )
+            {
+                repository.CreatePub(name, description, address, contact);
+            }
+            throw new NullReferenceException("Esse bar já foi cadastrado");
+        }
 
     }  
 }

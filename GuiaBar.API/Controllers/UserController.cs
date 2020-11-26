@@ -17,13 +17,14 @@ namespace GuiaBar.API.Controller
             this.service = service;
         }
 
-        [HttpGet("home")]
-        public ActionResult Get()
-        {
-            IEnumerable<Pub> result = service.GetAllPubs();
-            return Ok(result);
-        } 
 
+
+        /// <summary>
+        /// Cadastra um usuário
+        /// </summary>
+        /// <returns>Cadastrar usuário</returns>
+        /// <response code="200">Usuário cadastrado</response>
+        /// <response code="400">User name já cadastrado</response>
         [HttpPost]
         public ActionResult Post([FromBody]CreateUserRequest request)
         {
@@ -31,6 +32,13 @@ namespace GuiaBar.API.Controller
             return Ok();
         } 
 
+        /// <summary>
+        /// Login do usuário
+        /// </summary>
+        /// <returns>Token de acesso do usuário</returns>
+        /// <response code="200">Login realizado</response>
+        /// <response code="400">Senha incorreta</response>
+        /// <response code="400">Usuário nçao cadastrado</response>
         [HttpPost("login")]
         public ActionResult<Token> Post([FromBody]LoginRequest request)
         {
@@ -38,7 +46,16 @@ namespace GuiaBar.API.Controller
             return Ok(result);
         } 
         
-        [HttpPost]
+        /// <summary>
+        /// Avaliar o bar
+        /// </summary>
+        /// <returns>Nothing</returns>
+        /// <response code="200">Avaliação cadastrada</response>
+        /// <response code="400">Bar não cadastrado</response>
+        /// <response code="400">Usuário não cadastrado</response>
+        /// <response code="401">"Token Inválido ou expirado!"</response>
+        /// <response code="403">"Apenas usuários cadastrados podem avaliar bares"</response>
+        
         [Route("evaluation")]
         [Authorize(Roles = "common")]
         public ActionResult EvaluationPost([FromBody]CreateEvaluationRequest request)
@@ -47,6 +64,15 @@ namespace GuiaBar.API.Controller
             return Ok();
         }     
 
+        /// <summary>
+        /// Calcula distancia e tempo do usuário até o bar
+        /// </summary>
+        /// <returns>Distancia e tempo entre o bar e o usuario</returns>
+        /// <response code="200">Distancia e tempo calculado com sucesso</response>
+        /// <response code="400">Bar não cadastrado</response>
+        /// <response code="400">Usuário não cadastrado</response>
+        /// <response code="401">"Token Inválido ou expirado!"</response>
+        /// <response code="403">"Apenas usuários cadastrados podem medir suas distancia até os bares"</response>
         [HttpGet("distance")]
         [Authorize(Roles = "common")]
         public ActionResult<Root> Get([FromQuery]GetRouteRequest request)

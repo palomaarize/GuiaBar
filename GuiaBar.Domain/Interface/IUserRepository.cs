@@ -11,6 +11,7 @@ namespace GuiaBar.Domain.Interface
         User GetUserByUserName(string userName);
         void CreateEvaluation(long userId, long pubId, decimal evaluation);
         User GetUserById(long userId);
-        IEnumerable<Pub> GetAllPubs();
+        public IEnumerable<User> GetAllUsers();
+        
     }
 }

@@ -5,6 +5,7 @@ using GuiaBar.API.Models.Request;
 using GuiaBar.Domain.Services.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using GuiaBar.Domain.Entities;
 
 namespace GuiaBar.API.Controllers
 {
@@ -22,15 +23,9 @@ namespace GuiaBar.API.Controllers
         /// <summary>
         /// Cadastra um bar no banco de dados
         /// </summary>
-        /// <param name="name">Nome do bar</param>
-        /// <param name="description">Descrição do bar</param>
-        /// <param name="address">Endereço do bar</param>
-        /// <param name="contact">Contato do bar</param>
         /// <response code="200">Usuário cadastrado</response>
         /// <response code="400">Bar já cadastrado</response>
-        /// <response code="401">"Token Inválido ou expirado!"</response>
         /// <response code="403">"Apenas administradores podem cadastrar bares"</response>
-
         [HttpPost]
         [Authorize(Roles = "admin")]
         public ActionResult Post([FromBody]CreatePubRequest request)
@@ -38,6 +33,19 @@ namespace GuiaBar.API.Controllers
             service.CreatePub(request.Name, request.Description, request.Address, request.Contact);
             return Ok();
         }
+
+        /// <summary>
+        /// Lista todos os bares cadastrados
+        /// </summary>
+        /// <returns>Listar bares cadastrados</returns>
+        /// <response code="200">Lista de todos os bares</response>
+        /// <response code="400">Nenhum bar cadastrado</response>
+        [HttpGet("home")]
+        public ActionResult Get()
+        {
+            IEnumerable<Pub> result = service.GetAllPubs();
+            return Ok(result);
+        } 
 
     }
 }

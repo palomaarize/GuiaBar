@@ -9,5 +9,6 @@ namespace GuiaBar.Domain.Interface
         void UpdateEvaluation(long id, decimal evaluation);
         IEnumerable<UserPubEvaluation> ListEvaluationById(long pubId);
         Pub GetPubByName(string pubName);
+        IEnumerable<Pub> GetAllPubs();
     }
 }

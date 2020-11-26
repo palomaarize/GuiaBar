@@ -10,6 +10,6 @@ namespace GuiaBar.Domain.Services.Interface
         void CreateEvaluation(long userId, string pubName, decimal evaluation);
         // void GetEvaluationById(long pubId);
         Root CountDistance(long userId, string pubName);
-         public IEnumerable<Pub> GetAllPubs();
+        
     }
 }

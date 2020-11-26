@@ -18,7 +18,7 @@ namespace GuiaBar.Data.Repository
 
         public void CreateUser(string userName, string password, string email, string address)
         {
-
+            
             User user = new User()
             {
                 UserName = userName,
@@ -27,6 +27,7 @@ namespace GuiaBar.Data.Repository
                 Address = address,
                 IsAdmin = false,
             };
+            if(user.UserName == userName)
 
             dbContext.Set<User>().Add(user);
             dbContext.SaveChanges();
@@ -48,13 +49,14 @@ namespace GuiaBar.Data.Repository
             dbContext.SaveChanges();
         }
 
-        public IEnumerable<Pub> GetAllPubs()
-        {   
-            IQueryable<Pub> pubsList =
-            from pubs in dbContext.Pubs
-            select pubs;
-            return pubsList.ToList();
-        }
+            public IEnumerable<User> GetAllUsers()
+            {   
+            IQueryable<User> usersList =
+            from users in dbContext.Users
+            select users;
+            return usersList.ToList();
+            }
+
         
     }
 }

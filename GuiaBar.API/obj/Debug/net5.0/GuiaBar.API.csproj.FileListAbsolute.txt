@@ -41,3 +41,10 @@
 /home/paloma/Documentos/projects/GuiaBar/GuiaBar.API/obj/Debug/net5.0/ref/GuiaBar.API.dll
 /home/paloma/Documentos/projects/GuiaBar/GuiaBar.API/obj/Debug/net5.0/GuiaBar.API.pdb
 /home/paloma/Documentos/projects/GuiaBar/GuiaBar.API/obj/Debug/net5.0/GuiaBar.API.genruntimeconfig.cache
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.API/bin/Debug/net5.0/Microsoft.OpenApi.dll
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.API/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.API/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.API/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.API/obj/Debug/net5.0/GuiaBar.API.MvcApplicationPartsAssemblyInfo.cs
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.API/bin/Debug/net5.0/GuiaBar.API.xml
+/home/paloma/Documentos/projects/GuiaBar/GuiaBar.API/obj/Debug/net5.0/GuiaBar.API.xml

@@ -25,6 +25,7 @@ namespace GuiaBar.Domain.Services
         }
 
         public void CreateUser(string userName, string password, string email, string address) => userRepository.CreateUser(userName, password, email, address);
+        
 
         public Token Login(string userName, string password)
         {
@@ -89,7 +90,6 @@ namespace GuiaBar.Domain.Services
                 return distanceRepository.GetRoute(userAddress, pubAddress);
             }
 
-                public IEnumerable<Pub> GetAllPubs() => userRepository.GetAllPubs();
 
     }
 }

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GuiaBar.API</name>
+    </assembly>
+    <members>
+        <member name="M:GuiaBar.API.Controllers.PubController.Post(GuiaBar.API.Models.Request.CreatePubRequest)">
+            <summary>
+            Cadastra um bar no banco de dados
+            </summary>
+            <response code="200">Usuário cadastrado</response>
+            <response code="400">Bar já cadastrado</response>
+            <response code="403">"Apenas administradores podem cadastrar bares"</response>
+        </member>
+        <member name="M:GuiaBar.API.Controllers.PubController.Get">
+            <summary>
+            Lista todos os bares cadastrados
+            </summary>
+            <returns>Listar bares cadastrados</returns>
+            <response code="200">Lista de todos os bares</response>
+            <response code="400">Nenhum bar cadastrado</response>
+        </member>
+        <member name="M:GuiaBar.API.Controller.UserController.Post(GuiaBar.API.Models.Request.CreateUserRequest)">
+            <summary>
+            Cadastra um usuário
+            </summary>
+            <returns>Cadastrar usuário</returns>
+            <response code="200">Usuário cadastrado</response>
+            <response code="400">User name já cadastrado</response>
+        </member>
+        <member name="M:GuiaBar.API.Controller.UserController.Post(GuiaBar.API.Models.Request.LoginRequest)">
+            <summary>
+            Login do usuário
+            </summary>
+            <returns>Token de acesso do usuário</returns>
+            <response code="200">Login realizado</response>
+            <response code="400">Senha incorreta</response>
+            <response code="400">Usuário nçao cadastrado</response>
+        </member>
+        <member name="M:GuiaBar.API.Controller.UserController.EvaluationPost(GuiaBar.API.Models.Request.CreateEvaluationRequest)">
+            <summary>
+            Avaliar o bar
+            </summary>
+            <returns>Nothing</returns>
+            <response code="200">Avaliação cadastrada</response>
+            <response code="400">Bar não cadastrado</response>
+            <response code="400">Usuário não cadastrado</response>
+            <response code="401">"Token Inválido ou expirado!"</response>
+            <response code="403">"Apenas usuários cadastrados podem avaliar bares"</response>
+        </member>
+        <member name="M:GuiaBar.API.Controller.UserController.Get(GuiaBar.API.Models.Request.GetRouteRequest)">
+            <summary>
+            Calcula distancia e tempo do usuário até o bar
+            </summary>
+            <returns>Distancia e tempo entre o bar e o usuario</returns>
+            <response code="200">Distancia e tempo calculado com sucesso</response>
+            <response code="400">Bar não cadastrado</response>
+            <response code="400">Usuário não cadastrado</response>
+            <response code="401">"Token Inválido ou expirado!"</response>
+            <response code="403">"Apenas usuários cadastrados podem medir suas distancia até os bares"</response>
+        </member>
+    </members>
+</doc>

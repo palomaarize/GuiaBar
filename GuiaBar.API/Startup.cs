@@ -15,6 +15,9 @@ using Microsoft.IdentityModel.Tokens;
 using GuiaBar.Domain.Config;
 using Microsoft.OpenApi.Models;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 
 namespace GuiaBar.Domain.API
 {
@@ -57,22 +60,54 @@ namespace GuiaBar.Domain.API
 
         services.AddSwaggerGen(c =>
             {
-    c.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Version = "v1",
-        Title = "GuiaBar.API",
-        Description = "API to help you find good bars",
-        Contact = new OpenApiContact
-        {
-            Name = "Paloma Arize",
-            Email = "paloma.arize@ufba.br",
-            Url = new Uri("https://github.com/palomaarize"),
-        },
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "GuiaBar.API",
+                    Description = "API to help you find good bars",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Paloma Arize",
+                        Email = "paloma.arize@ufba.br",
+                        Url = new Uri("https://github.com/palomaarize"),
+                    }
+                });
 
-    });
-});
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
 
-            // Register the Swagger generator, defining 1 or more Swagger documents
+                var security = new Dictionary<string, IEnumerable<string>>
+                {
+                    {"Bearer", new string[] { }},
+                };
+
+                c.AddSecurityDefinition(
+                    "Bearer",
+                    new OpenApiSecurityScheme
+                    {
+                        In = ParameterLocation.Header,
+                        Description = "Copie 'Bearer ' + token'",
+                        Name = "Authorization",
+                        Type = SecuritySchemeType.ApiKey
+
+                    });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        }, new List<string>()
+                    }
+                }
+                    );
+            });
+        
 
             #region Dependency Injection
             //Repository

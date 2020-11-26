@@ -46,6 +46,12 @@ namespace GuiaBar.Data.Repository
 
         public Pub GetPubByName(string pubName) => dbContext.Pubs.AsNoTracking().FirstOrDefault(p => p.Name == pubName);
 
-        
+         public IEnumerable<Pub> GetAllPubs()
+        {   
+            IQueryable<Pub> pubsList =
+            from pubs in dbContext.Pubs
+            select pubs;
+            return pubsList.ToList();
+        }
     }
 }
