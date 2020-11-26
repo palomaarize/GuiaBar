@@ -6,6 +6,10 @@ namespace GuiaBar.Domain.Entities
     [Table("user_pub_evaluation")]
     public class UserPubEvaluation
     {
+        
+    [Key]
+    [Column("id")]
+    public long Id { get; set; }
     
     [Column("user_id")]
     public long UserId { get; set; }

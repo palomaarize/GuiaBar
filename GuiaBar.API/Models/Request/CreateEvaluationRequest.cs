@@ -10,8 +10,8 @@ namespace GuiaBar.API.Models.Request
     [JsonPropertyName("userId")]
     public long UserId { get; set; }
 
-    [JsonPropertyName("pubId")]       
-    public long PubId { get; set; }
+    [JsonPropertyName("pubName")]       
+    public string PubName { get; set; }
 
     [JsonPropertyName("evaluation")]
     public decimal Evaluation { get; set; }

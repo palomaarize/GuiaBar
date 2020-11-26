@@ -6,5 +6,8 @@ namespace GuiaBar.Domain.Services.Interface
     {
         void CreateUser(string userName, string password, string email, string address);
         Token Login(string userName, string password);
+        void CreateEvaluation(long userId, string pubName, decimal evaluation);
+        // void GetEvaluationById(long pubId);
+        Root CountDistance(string userAddress, string pubAddress);
     }
 }

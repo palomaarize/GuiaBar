@@ -57,9 +57,12 @@ namespace GuiaBar.Domain.API
             //Repository
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IPubRepository, PubRepository>();
+            services.AddScoped<IDistanceMatrixRepository, DistanceMatrixRepository>(); 
+
             //Services
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IPubService, PubService>();            
+            services.AddScoped<IPubService, PubService>();
+              
             #endregion
         }
 

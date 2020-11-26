@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using GuiaBar.Domain.Config;
@@ -21,6 +23,5 @@ namespace GuiaBar.Domain.Services
 
         public void CreatePub(string name, string description, string address, string contact) => repository.CreatePub(name, description, address, contact);
 
-        public void PubEvaluation(long id, decimal evaluation) => repository.PubEvaluation(id, evaluation);
     }  
 }

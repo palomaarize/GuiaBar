@@ -1,5 +1,6 @@
 
 
+using System.Collections.Generic;
 using GuiaBar.API.Models.Request;
 using GuiaBar.Domain.Services.Interface;
 using Microsoft.AspNetCore.Authorization;
@@ -26,18 +27,6 @@ namespace GuiaBar.API.Controllers
             service.CreatePub(request.Name, request.Description, request.Address, request.Contact);
             return Ok();
         }
-
-       
-     
-
-        [HttpPut]
-        [Route("{id}")]
-
-        public ActionResult EvaluationPut([FromRoute] long id, [FromBody]CreatePubRequest request)
-        {
-             service.PubEvaluation(id, request.Evaluation);
-             return Ok();
-        }  
 
     }
 }
