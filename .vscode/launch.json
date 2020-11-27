@@ -19,12 +19,7 @@
                 "action": "openExternally",
                 "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
             },
-            "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development",
-                "DATABASE_CONNECTION_STRING": "Host=postgres.evilsummit.com.br;Port=5432;Username=usr011;Password=h4tQ7csNwV;Database=db011;",
-                "TOKEN_KEY": "U2VuaGFHdWlhQmFyQVBJMjAyMFNvbHV0aXNQb3JzZWw=",
-                "API_AUTOTAG_KEY": "AIzaSyClqPbtGqopSz0tdhwOzK3iWsGnOShUeeI"
-            },
+            //
 
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
