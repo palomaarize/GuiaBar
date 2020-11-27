@@ -17,8 +17,6 @@ namespace GuiaBar.API.Controller
             this.service = service;
         }
 
-
-
         /// <summary>
         /// Cadastra um usuário
         /// </summary>

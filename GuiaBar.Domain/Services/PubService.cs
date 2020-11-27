@@ -24,12 +24,12 @@ namespace GuiaBar.Domain.Services
 
         public void CreatePub(string name, string description, string address, string contact)
         {   
-            IEnumerable<Pub> pubsNames = repository.GetAllPubs().Where(p => p.Name == name).ToList();
-            if(pubsNames != null )
+            bool pubExist = repository.GetPubByName(name) != null;
+            if(pubExist != false)
             {
-                repository.CreatePub(name, description, address, contact);
+                throw new Exception("Esse bar já foi cadastrado");
             }
-            throw new NullReferenceException("Esse bar já foi cadastrado");
+            repository.CreatePub(name, description, address, contact);
         }
 
     }  
