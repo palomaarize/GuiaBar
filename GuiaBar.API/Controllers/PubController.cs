@@ -6,6 +6,7 @@ using GuiaBar.Domain.Services.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using GuiaBar.Domain.Entities;
+using GuiaBar.API.Models.ViewModel;
 
 namespace GuiaBar.API.Controllers
 {
@@ -24,8 +25,8 @@ namespace GuiaBar.API.Controllers
         /// Cadastra um bar no banco de dados
         /// </summary>
         /// <response code="200">Usuário cadastrado</response>
-        /// <response code="400">Bar já cadastrado</response>
         /// <response code="403">"Apenas administradores podem cadastrar bares"</response>
+        /// <response code="500">Erro interno</response>
         [HttpPost]
         [Authorize(Roles = "admin")]
         public ActionResult Post([FromBody]CreatePubRequest request)
@@ -40,11 +41,26 @@ namespace GuiaBar.API.Controllers
         /// <returns>Listar bares cadastrados</returns>
         /// <response code="200">Lista de todos os bares</response>
         /// <response code="400">Nenhum bar cadastrado</response>
+        /// <response code="500">Erro interno</response>
         [HttpGet("home")]
         public ActionResult Get()
         {
             IEnumerable<Pub> result = service.GetAllPubs();
-            return Ok(result);
+            List<PubViewModel> viewModel = new List<PubViewModel>();
+            foreach (var item in result)
+            {
+                viewModel.Add(new PubViewModel
+                {
+                    Name = item.Name,
+                    Description = item.Description,
+                    Address = item.Address,
+                    Contact = item.Address,
+                    Evaluation = item.Evaluation
+                    
+                });
+            }
+
+            return Ok(viewModel);
         } 
 
     }

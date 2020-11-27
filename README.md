@@ -3,7 +3,7 @@
 
 ## 💻 Sobre o projeto
 
-:beer: GuiaBar - é uma forma de conectar o público bohêmio e bares locais, ele permite que o cliente veja as principais informações dos bares cadastrados, mostre o quão distante em quilometros e minutos ele está do bar escolhido e claro, que ao conhecer o bar ele também pode atribuir uma avaliação para que os outros usuários venha a fazer uma boa escolha! 
+:beer: GuiaBar - é uma forma de conectar o público bohêmio e bares locais. Ele permite que o cliente veja as principais informações dos bares cadastrados, mostre o quão distante em quilometros e minutos ele está do bar escolhido e claro, que ao conhecer o bar ele também pode atribuir uma avaliação para que os outros usuários venha a fazer uma boa escolha! 
 
 
 Projeto desenvolvido durante a **Talent Sprint 2020** oferecida pela [Solutis Tecnologias Ltda.](https://solutis.com.br/)

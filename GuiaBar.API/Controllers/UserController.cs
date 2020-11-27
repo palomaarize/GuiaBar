@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using GuiaBar.API.Models.Request;
+using GuiaBar.API.Models.ViewModel;
 using GuiaBar.Domain.Entities;
 using GuiaBar.Domain.Services.Interface;
 using Microsoft.AspNetCore.Authorization;
@@ -23,6 +25,7 @@ namespace GuiaBar.API.Controller
         /// <returns>Cadastrar usuário</returns>
         /// <response code="200">Usuário cadastrado</response>
         /// <response code="400">User name já cadastrado</response>
+        /// <response code="500">Erro interno</response>
         [HttpPost]
         public ActionResult Post([FromBody]CreateUserRequest request)
         {
@@ -35,13 +38,12 @@ namespace GuiaBar.API.Controller
         /// </summary>
         /// <returns>Token de acesso do usuário</returns>
         /// <response code="200">Login realizado</response>
-        /// <response code="400">Senha incorreta</response>
-        /// <response code="400">Usuário nçao cadastrado</response>
+        /// <response code="500">Erro interno</response>
         [HttpPost("login")]
         public ActionResult<Token> Post([FromBody]LoginRequest request)
         {
             Token result = service.Login(request.UserName, request.Password);
-            return Ok(result);
+            return Ok(result.AccessToken);
         } 
         
         /// <summary>
@@ -49,21 +51,19 @@ namespace GuiaBar.API.Controller
         /// </summary>
         /// <returns>Nothing</returns>
         /// <response code="200">Avaliação cadastrada</response>
-        /// <response code="400">Bar não cadastrado</response>
-        /// <response code="400">Usuário não cadastrado</response>
         /// <response code="401">"Token Inválido ou expirado!"</response>
         /// <response code="403">"Apenas usuários cadastrados podem avaliar bares"</response>
-        [HttpPost]
-        [Route("evaluation")]
+        /// <response code="500">Erro interno</response>
+        [HttpPost("evaluation")]
         [Authorize(Roles = "common")]
         public ActionResult Post([FromBody]CreateEvaluationRequest request)
-        {   string userIdByToken = User.Identity.Name;
+        {   
             long userId;
-            long.TryParse(userIdByToken, out userId);
+            long.TryParse(User.Identity.Name, out userId);
 
             service.CreateEvaluation(userId, request.PubName, request.Evaluation);
             decimal evaluation = request.Evaluation;
-            
+
             return Ok($"Sua avaliação {evaluation} foi aplicada com sucesso!");
         }     
 
@@ -72,20 +72,24 @@ namespace GuiaBar.API.Controller
         /// </summary>
         /// <returns>Distancia e tempo entre o bar e o usuario</returns>
         /// <response code="200">Distancia e tempo calculado com sucesso</response>
-        /// <response code="400">Bar não cadastrado</response>
-        /// <response code="400">Usuário não cadastrado</response>
         /// <response code="401">"Token Inválido ou expirado!"</response>
         /// <response code="403">"Apenas usuários cadastrados podem medir suas distancia até os bares"</response>
+        /// <response code="500">Erro interno</response>
         [HttpGet("distance")]
         [Authorize(Roles = "common")]
-        public ActionResult<Root> Get([FromQuery]GetRouteRequest request)
+        public ActionResult<RootViewModel> Get([FromQuery]GetRouteRequest request)
         {
-            string userIdByToken = User.Identity.Name;
             long userId;
-            long.TryParse(userIdByToken, out userId);
+            long.TryParse(User.Identity.Name, out userId);
 
+            
             Root result = service.CountDistance(userId, request.PubName);
-            return Ok(result);
+            RootViewModel viewModel = new RootViewModel()
+            {
+               distance = result.rows.First().elements.First().distance.text,
+               duration = result.rows.First().elements.First().duration.text
+            };
+            return Ok(viewModel);
         } 
     }
 }
