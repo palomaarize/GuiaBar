@@ -78,12 +78,12 @@ A arquitetura da aplicação foi inspirada na clean architecture microsoft:
 
 ## 🚀 Como executar o projeto
 
-💡É necessário ter o .NET SDK 5.0 para funcionar.
+💡É necessário ter o .NET SDK 5.0 e um banco de dados para funcionar.
 
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [.NetCore](https://dotnet.microsoft.com/download). 
+[Git](https://git-scm.com), [.NetCore](https://dotnet.microsoft.com/download) e um banco de dados [Postgresql](https://www.postgresql.org/) com as tabelas que devem ser geradas com o [Script](https://github.com/palomaarize/GuiaBar/blob/master/scripts.sql) que estão nesse repositório.
 Além disto caso queira por as mãos no código é bom ter um editor como o [VSCode.](https://code.visualstudio.com/)
 
 #### 🎲 Rodando o Backend (servidor)
