@@ -144,7 +144,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ## 💜 Agradecimento
 
 Muito obrigada a equipe Solutis por nos proporcionar essa experiência incrível e cheia de aprendizados!
+
 Obrigada pessoalmente a Alex por ministrar as melhores "aulas" que não podem ser chamadas de aulas kkkkk
+
 E obrigada aos coleguinhas de treinamento que trocaram dúvidas e conhecimento comigo!
 
 <img src="https://media.giphy.com/media/VelWewgR6CpNK/giphy.gif"
