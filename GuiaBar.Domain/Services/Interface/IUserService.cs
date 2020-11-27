@@ -11,5 +11,7 @@ namespace GuiaBar.Domain.Services.Interface
         void CreateEvaluation(long userId, string pubName, decimal evaluation);
         Root CountDistance(long userId, string pubName);
         
+        
+        
     }
 }

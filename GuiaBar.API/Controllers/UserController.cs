@@ -53,13 +53,18 @@ namespace GuiaBar.API.Controller
         /// <response code="400">Usuário não cadastrado</response>
         /// <response code="401">"Token Inválido ou expirado!"</response>
         /// <response code="403">"Apenas usuários cadastrados podem avaliar bares"</response>
-        
+        [HttpPost]
         [Route("evaluation")]
         [Authorize(Roles = "common")]
-        public ActionResult EvaluationPost([FromBody]CreateEvaluationRequest request)
-        {
-            service.CreateEvaluation(request.UserId, request.PubName, request.Evaluation);
-            return Ok();
+        public ActionResult Post([FromBody]CreateEvaluationRequest request)
+        {   string userIdByToken = User.Identity.Name;
+            long userId;
+            long.TryParse(userIdByToken, out userId);
+
+            service.CreateEvaluation(userId, request.PubName, request.Evaluation);
+            decimal evaluation = request.Evaluation;
+            
+            return Ok($"Sua avaliação {evaluation} foi aplicada com sucesso!");
         }     
 
         /// <summary>
@@ -75,7 +80,11 @@ namespace GuiaBar.API.Controller
         [Authorize(Roles = "common")]
         public ActionResult<Root> Get([FromQuery]GetRouteRequest request)
         {
-            Root result = service.CountDistance(request.UserId, request.PubName);
+            string userIdByToken = User.Identity.Name;
+            long userId;
+            long.TryParse(userIdByToken, out userId);
+
+            Root result = service.CountDistance(userId, request.PubName);
             return Ok(result);
         } 
     }

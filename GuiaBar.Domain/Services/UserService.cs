@@ -46,7 +46,7 @@ namespace GuiaBar.Domain.Services
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, user.UserName),
+                    new Claim(ClaimTypes.Name, user.Id.ToString()),
                     new Claim(ClaimTypes.Role, user.Role())
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),

@@ -37,7 +37,7 @@
             <response code="400">Senha incorreta</response>
             <response code="400">Usuário nçao cadastrado</response>
         </member>
-        <member name="M:GuiaBar.API.Controller.UserController.EvaluationPost(GuiaBar.API.Models.Request.CreateEvaluationRequest)">
+        <member name="M:GuiaBar.API.Controller.UserController.Post(GuiaBar.API.Models.Request.CreateEvaluationRequest)">
             <summary>
             Avaliar o bar
             </summary>
@@ -58,6 +58,111 @@
             <response code="400">Usuário não cadastrado</response>
             <response code="401">"Token Inválido ou expirado!"</response>
             <response code="403">"Apenas usuários cadastrados podem medir suas distancia até os bares"</response>
+        </member>
+        <member name="T:GuiaBar.API.Models.Request.CreateEvaluationRequest">
+            <summary>
+            CreateEvaluation-Request-
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.CreateEvaluationRequest.UserId">
+            <summary>
+            UserId
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.CreateEvaluationRequest.PubName">
+            <summary>
+            PubName
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.CreateEvaluationRequest.Evaluation">
+            <summary>
+            UserRating
+            </summary>
+        </member>
+        <member name="T:GuiaBar.API.Models.Request.CreatePubRequest">
+            <summary>
+            CreatePub-Request-
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.CreatePubRequest.Id">
+            <summary>
+            PubId
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.CreatePubRequest.Name">
+            <summary>
+            PubName
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.CreatePubRequest.Description">
+            <summary>
+            PubDescription
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.CreatePubRequest.Address">
+            <summary>
+            PubAddress
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.CreatePubRequest.Contact">
+            <summary>
+            PubContact
+            </summary>    
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.CreatePubRequest.Evaluation">
+            <summary>
+            AverageBarRatings
+            </summary>
+        </member>
+        <member name="T:GuiaBar.API.Models.Request.CreateUserRequest">
+            <summary>
+            CreateUser-Request-
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.CreateUserRequest.UserName">
+            <summary>
+            UserName
+            </summary>   
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.CreateUserRequest.Password">
+            <summary>
+            UserPassword
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.CreateUserRequest.Email">
+            <summary>
+            UserEmail
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.CreateUserRequest.Address">
+            <summary>
+            UserAddress
+            </summary>
+        </member>
+        <member name="T:GuiaBar.API.Models.Request.GetRouteRequest">
+            <summary>
+            GetRoute-Request-
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.GetRouteRequest.UserId">
+            <summary>
+            UserId
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.GetRouteRequest.PubName">
+            <summary>
+            PubName
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.LoginRequest.UserName">
+            <summary>
+            UserName
+            </summary>
+        </member>
+        <member name="P:GuiaBar.API.Models.Request.LoginRequest.Password">
+            <summary>
+            UserPassword
+            </summary>
         </member>
     </members>
 </doc>

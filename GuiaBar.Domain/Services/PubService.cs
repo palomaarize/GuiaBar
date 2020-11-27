@@ -22,6 +22,8 @@ namespace GuiaBar.Domain.Services
 
         public IEnumerable<Pub> GetAllPubs() => repository.GetAllPubs();
 
+        // public Pub GetPubByName(string pubName) => repository.GetPubByName(pubName);
+
         public void CreatePub(string name, string description, string address, string contact)
         {   
             bool pubExist = repository.GetPubByName(name) != null;

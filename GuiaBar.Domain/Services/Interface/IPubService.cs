@@ -8,6 +8,6 @@ namespace GuiaBar.Domain.Services.Interface
     {
         void CreatePub(string name, string description, string address, string contact );
         IEnumerable<Pub> GetAllPubs();
-        
+        // Pub GetPubByName(string pubName);
     }
 }
