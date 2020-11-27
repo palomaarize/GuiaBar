@@ -1,5 +1,5 @@
 # Guia Bar Api <img src="https://img.icons8.com/fluent/48/000000/beer.png"/>
-<center><a href="https://www.linkedin.com/in/paloma-arize/"><img alt="Por: " src="https://img.shields.io/badge/Por:%20Paloma%0Arize-yellow"></a>  <a href="https://www.linkedin.com/in/paloma-arize/"><img alt="Tecnologias" src="https://img.shields.io/badge/Tecnologia-.NET%205.0-yellow"></a></center>
+<center><a href="https://www.linkedin.com/in/paloma-arize/"><img alt="Por: " src="https://img.shields.io/badge/Por:%20Paloma%20Arize-yellow"></a>  <a href="https://www.linkedin.com/in/paloma-arize/"><img alt="Tecnologias" src="https://img.shields.io/badge/Tecnologia-.NET%205.0-yellow"></a></center>
 
 ## 💻 Sobre o projeto
 
