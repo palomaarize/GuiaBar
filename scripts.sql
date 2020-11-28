@@ -12,7 +12,8 @@ CREATE TABLE application_user (
 	user_name varchar not null unique,
 	"password" varchar not null,
 	email varchar not null,
-	address varchar not null
+	address varchar not null,
+	is_admin bool not null
 );
 
 CREATE TABLE application_pub (
