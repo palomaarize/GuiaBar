@@ -122,7 +122,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
 -   **[EFCore Naming Conventions](https://www.nuget.org/packages/EFCore.NamingConventions/5.0.0-rc1)**
 -   **[Microsoft EntityFrameworkCore Proxies](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Proxies/)**
 -   **[Microsoft AspNetCore Authentication](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.MicrosoftAccount)**
--   **[Leaflet](https://react-leaflet.js.org/en/)**
 -   **[Microsoft AspNetCore Authentication JwtBearer](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer/)**
 -   **[Swashbuckle AspNetCore](https://www.nuget.org/packages/Swashbuckle.AspNetCore/)**
 
